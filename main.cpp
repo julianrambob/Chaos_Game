@@ -16,8 +16,18 @@ int main()
 	vector<Vector2f> vertices;
 	vector<Vector2f> points;
 
+	Font f;
+	f.loadFromFile("ApeMount-WyPM9.ttf");
+
+	Text instructions;
+	instructions.setPosition(10, 10);
+	instructions.setFont(f);
+	instructions.setCharacterSize(24);
+	instructions.setFillColor(Color::White);
+
 	while (window.isOpen())
 	{
+
 		/*
 		****************************************
 		Handle the players input
@@ -48,6 +58,8 @@ int main()
 			Update the scene
 		*****************************************/
 		//generate points
+
+		instructions.setString("Click Three points, then click once to start the Chaos");
 		/*
 		****************************************
 		Draw the scene
@@ -65,6 +77,8 @@ int main()
 			r.setPosition(Vector2f{ vertices.at(i).x, vertices.at(i).y });
 			window.draw(r);
 		}
+
+		window.draw(instructions);
 
 		// Show everything we just drew
 		window.display();
