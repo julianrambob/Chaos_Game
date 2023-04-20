@@ -1,3 +1,6 @@
+
+//Chaos Project by Julian Rambob and Prabhi Singh
+
 // Include important C++ libraries here
 #include <SFML/Graphics.hpp>
 #include <SFML/Audio.hpp>
@@ -64,7 +67,7 @@ int main()
 				if (event.mouseButton.button == sf::Mouse::Right)
 				{
 					if (vertices.size() >= 3)
-					{
+						{
 						std::cout << "the right button was pressed" << std::endl;
 						points.push_back({ (float)event.mouseButton.x, (float)event.mouseButton.y });
 						chaos = true;
@@ -82,7 +85,7 @@ int main()
 		instructions.setString("Left click the vertices of your shape, then right click to start the Chaos");
 
 		if (chaos)
-		{
+		{	
 			int random = rand() % vertices.size();
 			Vector2f next_p(static_cast<float>((vertices.at(random).x + points.at(point_counter).x) / 2), static_cast<float>((vertices.at(random).y + points.at(point_counter).y )/ 2));
 			point_counter++;
